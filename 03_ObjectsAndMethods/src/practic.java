@@ -1,4 +1,4 @@
-public class Arithmetic {
+public class practic {
     public static String items = "";
     private static int sum;
     private static int addition;
@@ -6,7 +6,7 @@ public class Arithmetic {
     private static int minNumber;
 
     public static void main(String[] args) {
-        variables(2,2);
+        variables(6,4);
 
     }
 
@@ -17,8 +17,8 @@ public class Arithmetic {
         sum = x + y ;
         addition = x * y;
         System.out.println(items);
-        System.out.println("Сумма двух переменных равна:"+ sum);
-        System.out.println("Произведение двух переменных равна:"+ addition);
+        System.out.println("Сумма двух переменных равна:" + sum);
+        System.out.println("Произведение двух переменных равна:" + addition);
         if (x == y) {
 
             System.out.println("Переменные равны:" + x);
@@ -26,10 +26,10 @@ public class Arithmetic {
         }
         if(x>y) {
          maxNumber=x;
-            System.out.println("Максимальное из двух чисел:" +maxNumber );
+            System.out.println("Максимальное из двух чисел:" + maxNumber );
 
         }else {
-            System.out.println("Максимальное из двух чисел:" +y );
+            System.out.println("Максимальное из двух чисел:" + y );
 
     }
             if(y<x){
