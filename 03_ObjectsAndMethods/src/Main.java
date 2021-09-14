@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         Basket basket = new Basket();
-        basket.add("Молоко", 50, 2, 100);
-        basket.add("Хлеб", 18, 2, 35);
-        basket.add("Макароны", 40, 3, 50);
+        basket.add("Молоко",0 ,0 ,0 );
+        basket.add("Хлеб", 0, 0,0 );
+        basket.add("Макароны", 0, 0, 0);
         basket.print("");
 
 
@@ -16,6 +16,16 @@ public class Main {
 
         System.out.println();
         myArithmetic.print();
+
+
+      // Класс Printer
+
+        Printer myPrinter = new Printer();
+        System.out.println();
+        System.out.println();
+        myPrinter.append("Практика в Джава","Смотреть, учить, практиковать дважды.", 10);
+        myPrinter.print();
+        myPrinter.clear();
 
 
 
