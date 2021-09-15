@@ -23,12 +23,10 @@ public class Main {
         Printer myPrinter = new Printer();
         System.out.println();
         System.out.println();
-        myPrinter.append("Практика в Джава","Смотреть, учить, практиковать дважды.", 10);
+        myPrinter.append("Практика в Джава","Смотреть, учить, практиковать дважды.", 5);
         myPrinter.print();
-        myPrinter.clear();
-
-
-
+        myPrinter.append("Реферат","как программировать",4);
+        myPrinter.print();
     }
 }
 
