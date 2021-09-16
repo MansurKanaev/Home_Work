@@ -20,6 +20,7 @@ public class Printer {
 
          }
          System.out.println("Очередь очищена");
+
      }
      public void clear(){
          queue = "";
@@ -30,8 +31,18 @@ public class Printer {
              System.out.println("Очередь очищена");
          }else {
              System.out.println(queue);
-             System.out.println("Общее количество распечатанных страниц: " + totalAmountPage);
+             System.out.println("Общее количество распечатанных страниц: " + getTotalAmountPage());
+             System.out.println("Общее количество страниц: " + getPendingPagesCount());
 
          }
      }
+    public int getPendingPagesCount() {
+        pendingPagesCount = pendingPagesCount + totalAmountPage;
+        return pendingPagesCount;
+
+    }
+    public int getTotalAmountPage(){
+        totalAmountPage = totalAmountPage + amountPage;
+        return totalAmountPage;
+    }
 }

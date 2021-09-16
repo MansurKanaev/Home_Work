@@ -25,8 +25,13 @@ public class Main {
         System.out.println();
         myPrinter.append("Практика в Джава","Смотреть, учить, практиковать дважды.", 5);
         myPrinter.print();
+        System.out.println();
         myPrinter.append("Реферат","как программировать",4);
         myPrinter.print();
+        System.out.println();
+        myPrinter.append("Доклад","Инвестиции",8);
+        myPrinter.print();
+        System.out.println();
     }
 }
 
