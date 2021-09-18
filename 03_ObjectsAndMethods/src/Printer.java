@@ -3,6 +3,7 @@ public class Printer {
      private int amountPage;
      private int pendingPagesCount;
      private int totalAmountPage ;
+     private int a;
 
      public void append(String nameDoc){
          append(nameDoc, "");
@@ -12,10 +13,11 @@ public class Printer {
      }
      public void append(String nameDoc, String texDoc, int amountPage){
          totalAmountPage = totalAmountPage + amountPage ;
+         pendingPagesCount = pendingPagesCount + amountPage;
          queue ="";
          queue = queue + "\n" + "Имя документа: " + nameDoc + "\n" + "Текст документа: "
                  + texDoc + "\n" + "Количество страниц: " + amountPage;
-         for (pendingPagesCount = 0; amountPage >= 0; amountPage = amountPage - 1){
+         for (a = 0; amountPage >= 0; amountPage = amountPage - 1){
              System.out.println("Количество страниц в очереди: " + amountPage);
 
          }
@@ -37,12 +39,10 @@ public class Printer {
          }
      }
     public int getPendingPagesCount() {
-        pendingPagesCount = pendingPagesCount + totalAmountPage;
         return pendingPagesCount;
 
     }
     public int getTotalAmountPage(){
-        totalAmountPage = totalAmountPage + amountPage;
         return totalAmountPage;
     }
 }
