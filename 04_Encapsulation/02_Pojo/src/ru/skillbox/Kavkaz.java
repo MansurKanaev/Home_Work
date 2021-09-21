@@ -2,11 +2,11 @@ package ru.skillbox;
 
 public class Kavkaz{
     private String republicName;
-    private String areaInSqKm;
-    private String population;
+    private int areaInSqKm;
+    private int population;
     private String capitalName;
 
-    public Kavkaz(String republicName, String capitalName, String areaInSqKm, String population){
+    public Kavkaz(String republicName, String capitalName, int areaInSqKm, int population){
         this.republicName = republicName;
         this.capitalName = capitalName;
         this.areaInSqKm = areaInSqKm;
@@ -19,16 +19,16 @@ public class Kavkaz{
     public String getCountryName(){
         return republicName;
     }
-    public void setAreaInSqKm(String areaInSqKm) {
+    public void setAreaInSqKm(int areaInSqKm) {
         this.areaInSqKm = areaInSqKm;
     }
-    public String getAreaInSqKm() {
+    public int getAreaInSqKm() {
         return areaInSqKm;
     }
-    public void setPopulation(String population) {
+    public void setPopulation(int population) {
         this.population = population;
     }
-    public String getPopulation() {
+    public int getPopulation() {
         return population;
     }
     public String getCapitalName() {
