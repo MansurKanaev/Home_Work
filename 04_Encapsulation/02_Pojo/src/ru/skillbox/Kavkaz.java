@@ -1,10 +1,10 @@
 package ru.skillbox;
 
 public class Kavkaz{
-    public String republicName;
-    public String areaInSqKm;
-    public String population;
-    public String capitalName;
+    private String republicName;
+    private String areaInSqKm;
+    private String population;
+    private String capitalName;
 
     public Kavkaz(String republicName, String capitalName, String areaInSqKm, String population){
         this.republicName = republicName;
