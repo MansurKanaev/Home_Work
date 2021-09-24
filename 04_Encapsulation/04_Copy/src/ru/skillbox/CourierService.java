@@ -40,6 +40,7 @@ public class CourierService {
     public String getLoadStrength() {
         return loadStrength;
     }
+
     public void String(){
         System.out.println("Масса: " + weight + " кг" + "\n"
                 + "Адрес доставки: " + deliveryAddress + "\n"
