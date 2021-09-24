@@ -2,9 +2,9 @@ package ru.skillbox;
 
 public class Dimensions {
 
-    private  int width;
-    private  int height;
-    private  int length;
+    private final int width;
+    private final int height;
+    private final int length;
     private final int dimensions = 0;
 
     public Dimensions(int width, int height, int length) {
@@ -12,7 +12,6 @@ public class Dimensions {
         this.height = height;
         this.length = length;
     }
-
     public Dimensions setDimensions(int dimensions) {
         dimensions = dimensions + (width * height * length);
         System.out.println("Объем товара: " + dimensions + " М3");
@@ -22,11 +21,9 @@ public class Dimensions {
     public Dimensions setWidth(int width) {
         return new Dimensions(width,height,length);
     }
-
     public Dimensions setHeight(int height) {
         return new Dimensions(width,height,length);
     }
-
     public Dimensions setLength(int length) {
        return new Dimensions(width,height,length);
     }
