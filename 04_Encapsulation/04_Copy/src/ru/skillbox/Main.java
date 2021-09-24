@@ -1,12 +1,13 @@
 package ru.skillbox;
 
 public class Main {
-
     public static void main(String[] args) {
-        CourierService courierService = new CourierService(50,"Ул. Мотросова № 52",
-                "Товар хрупкий.","2345321");
-        Dimensions dimensions = new Dimensions();
-        dimensions.cargoVolume(25,15,35);
+        CourierService courierService = new CourierService(100,"Щорса 24.",
+                "не поворачивать!", "001234","товар хрупкий!");
+        courierService.setWeight(50);
+        Dimensions dimensions = new Dimensions(3,4,6);
+        dimensions.setDimensions(0);
+
 
 
 

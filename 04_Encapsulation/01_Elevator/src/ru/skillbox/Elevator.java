@@ -2,9 +2,9 @@ package ru.skillbox;
 
 public class Elevator {
 
-    private int currentFloor = 1;
-    private int minFloor;
-    private int maxFloor;
+    private  int currentFloor = 1;
+    private  int minFloor;
+    private  int maxFloor;
 
     public Elevator(int minFloor, int maxFloor) {
         this.minFloor = minFloor;
