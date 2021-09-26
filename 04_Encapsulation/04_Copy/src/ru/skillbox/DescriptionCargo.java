@@ -46,8 +46,7 @@ public class DescriptionCargo {
         return dimensions;
     }
     public void String(){
-        System.out.println("Габариты груза: " + "\n" +  dimensions + "\n"
-                + "Масса: " + weight + " кг" + "\n"
+        System.out.println("Масса: " + weight + " кг" + "\n"
                 + "Адрес доставки: " + deliveryAddress + "\n"
                 + "Свойство груза: " + commodityProperty + "\n"
                 + "Регистрационный номер: " + registrationNumber + "\n"
