@@ -2,36 +2,33 @@ package ru.skillbox;
 
 public class DescriptionCargo {
 
+        private final Dimensions dimensions ;
         private final int weight;
         private final String deliveryAddress;
         private final String commodityProperty;
         private final String registrationNumber;
         private final String loadStrength;
-        private final Dimensions Dimensions ;
-
-
 
 
     public DescriptionCargo (int weight, String deliveryAddress, String commodityProperty,
-                             String registrationNumber, String loadStrength, Dimensions Dimensions) {
+                             String registrationNumber, String loadStrength, Dimensions dimensions) {
         this.weight = weight;
         this.deliveryAddress = deliveryAddress;
         this.commodityProperty = commodityProperty;
         this.registrationNumber = registrationNumber;
         this.loadStrength = loadStrength;
-        this.Dimensions = Dimensions;
-
+        this.dimensions = dimensions;
     }
     public DescriptionCargo setWeight(int weight) {
         return new DescriptionCargo (weight,deliveryAddress,commodityProperty,registrationNumber,
-                loadStrength, Dimensions );
+                loadStrength, dimensions );
     }
     public int getWeight() {
         return weight;
     }
     public DescriptionCargo setDeliveryAddress(String deliveryAddress) {
         return  new DescriptionCargo (weight,deliveryAddress,commodityProperty,registrationNumber,
-                loadStrength, Dimensions);
+                loadStrength, dimensions);
     }
     public String getDeliveryAddress() {
         return deliveryAddress;
@@ -46,14 +43,15 @@ public class DescriptionCargo {
         return loadStrength;
     }
     public Dimensions getDimensions() {
-        return Dimensions;
+        return dimensions;
     }
     public void String(){
-        System.out.println("Масса: " + weight + " кг" + "\n"
+        System.out.println("Габариты груза: " + "\n" +  dimensions + "\n"
+                + "Масса: " + weight + " кг" + "\n"
                 + "Адрес доставки: " + deliveryAddress + "\n"
-                + "Свойство товара: " + commodityProperty + "\n"
+                + "Свойство груза: " + commodityProperty + "\n"
                 + "Регистрационный номер: " + registrationNumber + "\n"
-                + "Прочность товара: " + loadStrength);
+                + "Прочность груза: " + loadStrength);
     }
 }
 

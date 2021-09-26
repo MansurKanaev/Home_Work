@@ -1,25 +1,19 @@
 package ru.skillbox;
 
-import java.awt.*;
-
 public class Main {
-
     public static void main(String[] args) {
-        Dimensions Dimensions = new Dimensions(3,4,6);
-        DescriptionCargo descriptionCargo = new DescriptionCargo(100,"Щорса 24.",
+        Dimensions dimensions = new Dimensions(2,5,3);
+
+        DescriptionCargo descriptionCargo = new DescriptionCargo(100,"ул. Щорса 24.",
                 "не поворачивать!", "001234","товар хрупкий!",
-                 Dimensions);
-       descriptionCargo = descriptionCargo.setWeight(50);
-       descriptionCargo = descriptionCargo.setDeliveryAddress("мотросова 9");
-       descriptionCargo.String();
-       Dimensions copy = new Dimensions(Dimensions.setWidth(3),Dimensions.setHeight(2),Dimensions.setLength(1));
-       System.out.println(Dimensions.toString());
+                 dimensions);
 
-
-
-
-
-
+        descriptionCargo = descriptionCargo.setWeight(50);
+        descriptionCargo = descriptionCargo.setDeliveryAddress("ул. Мотросова 9");
+        descriptionCargo.String();
+        dimensions.setWidth(3);
+        dimensions.setHeight(3);
+        dimensions.setLength(3);
 
 
 

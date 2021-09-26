@@ -11,33 +11,42 @@ public class Dimensions {
         this.height = height;
         this.length = length;
     }
-    public Dimensions setWidth(int width) {
+    public Dimensions(Dimensions widths, Dimensions setHeight, Dimensions setLength){
+        width =0;
+        height=0;
+        length=0;
+    }
+
+    public  Dimensions setWidth(int width) {
         return new Dimensions(width,height,length);
     }
-    public Dimensions setHeight(int height) {
+    public  Dimensions setHeight(int height) {
         return new Dimensions(width,height,length);
     }
-    public Dimensions setLength(int length) {
+    public  Dimensions setLength(int length) {
        return new Dimensions(width,height,length);
-    }
-    public int getWidth() {
-        return width;
-    }
-    public int getHeight() {
-        return height;
-    }
-    public int getLength() {
-        return length;
-    }
-    public int volume(){
-        return width * height * length  ;
 
     }
+    public int volume(){
+        return width * height * length;
+
+    }
+    public int getWidth(int dimensions) {
+        return width;
+    }
+    public int getHeight(int dimensions) {
+        return height;
+    }
+    public int getLength(int dimensions) {
+        return length;
+    }
+
     public String toString(){
-        return  "Объем груза: " + volume() + " см3 " + "\n"+
+        return
                 "Ширина: " + width + " см " + "\n" +
                 "Высота: " + height + " см " + "\n" +
-                "Длина: " + length + " см ";
+                "Длина: " + length + " см " + "\n" +
+                "Объем груза: " + volume() + " см3 ";
     }
 }
 
