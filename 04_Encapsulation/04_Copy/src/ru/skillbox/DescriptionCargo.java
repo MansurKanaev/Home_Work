@@ -23,12 +23,12 @@ public class DescriptionCargo {
         return new DescriptionCargo (weight,deliveryAddress,commodityProperty,registrationNumber,
                 loadStrength, dimensions );
     }
-    public int getWeight() {
-        return weight;
-    }
     public DescriptionCargo setDeliveryAddress(String deliveryAddress) {
         return  new DescriptionCargo (weight,deliveryAddress,commodityProperty,registrationNumber,
                 loadStrength, dimensions);
+    }
+    public int getWeight() {
+        return weight;
     }
     public String getDeliveryAddress() {
         return deliveryAddress;

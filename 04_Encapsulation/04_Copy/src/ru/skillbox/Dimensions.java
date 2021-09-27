@@ -6,19 +6,12 @@ public class Dimensions {
     private final int height;
     private final int length;
 
-    public Dimensions(Dimensions setWidths, Dimensions setHeight, Dimensions setLength){
-        width =0;
-        height=0;
-        length=0;
-    }
+
     public Dimensions(int width, int height, int length) {
         this.width = width;
         this.height = height;
         this.length = length;
-
     }
-
-
     public  Dimensions setWidth(int width) {
         return new Dimensions(width,height,length);
     }
@@ -27,22 +20,19 @@ public class Dimensions {
     }
     public  Dimensions setLength(int length) {
        return new Dimensions(width,height,length);
-
     }
     public int volume(){
         return width * height * length;
-
     }
-    public int getWidth(int dimensions) {
+    public int getWidth() {
         return width;
     }
-    public int getHeight(int dimensions) {
+    public int getHeight() {
         return height;
     }
-    public int getLength(int dimensions) {
+    public int getLength() {
         return length;
     }
-
     public String toString(){
         return  "Габариты груза: " + "\n" +
                 "Ширина: " + width + " см " + "\n" +
