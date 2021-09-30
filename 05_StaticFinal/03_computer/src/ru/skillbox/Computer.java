@@ -17,6 +17,7 @@ public class Computer {
         hardDisk = getHardDisk();
         screen = getScreen();
         keyboard = getKeyboard();
+
     }
 
     public double totalWeightComputer(){
@@ -59,6 +60,6 @@ public class Computer {
     }
     public String toString(){
         return "Производитель компьютера : " + vendor + "\n" +
-                "Модель компьютера: " + name + "\n" ;
+                "Модель компьютера: " + name + "\n" + processor.toString() ;
     }
 }
