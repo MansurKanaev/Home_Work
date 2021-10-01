@@ -11,6 +11,10 @@ public class HardDisk {
         this.weight = weight;
     }
 
+    public double HardDIskWeight(){
+        return weight;
+    }
+
     public String getType() {
         return type;
     }

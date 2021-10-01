@@ -11,6 +11,10 @@ public class RAM {
         this.weight = weight;
     }
 
+    public double RAMWeight(){
+        return weight;
+    }
+
     public String getType() {
         return type;
     }

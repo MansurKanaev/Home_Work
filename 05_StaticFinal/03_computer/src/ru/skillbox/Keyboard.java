@@ -11,6 +11,10 @@ public class Keyboard {
         this.backlight = backlight;
     }
 
+    public double KeyboardWeight(){
+        return weight;
+    }
+
     public String getType() {
         return type;
     }

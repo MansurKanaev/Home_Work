@@ -11,6 +11,10 @@ public class Screen {
         this.weight = weight;
     }
 
+    public double ScreenWeight(){
+        return weight;
+    }
+
     public double getDiagonal() {
         return diagonal;
     }
