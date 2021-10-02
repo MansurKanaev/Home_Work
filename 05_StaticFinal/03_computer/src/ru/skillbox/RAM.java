@@ -1,12 +1,11 @@
 package ru.skillbox;
 
 public class RAM {
-    private final String type;
+
     private final int volume;
     private final double weight;
 
-    public RAM(String type, int volume, double weight) {
-        this.type = type;
+    public RAM(int volume, double weight) {
         this.volume = volume;
         this.weight = weight;
     }
@@ -15,20 +14,12 @@ public class RAM {
         return weight;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public RAM setType(String type) {
-        return new RAM(type,volume,weight);
-    }
-
     public int getVolume() {
         return volume;
     }
 
     public RAM setVolume(int volume) {
-        return new RAM(type,volume,weight);
+        return new RAM(volume,weight);
     }
 
     public double getWeight() {
@@ -36,11 +27,12 @@ public class RAM {
     }
 
     public RAM setWeight(double weight) {
-        return new RAM(type,volume,weight);
+        return new RAM(volume,weight);
     }
+
     public String toString(){
         return "Характеристика Оперативной памяти: " + "\n" +
-                "Тип ОЗУ: " + type + "\n" +
+                "Тип ОЗУ: " + TypeComponents.DDR3 + "\n" +
                 "Объем ОЗУ: " + volume + " гб" + "\n" +
                 "Вес ОЗУ: " + weight + "гр." + "\n";
 

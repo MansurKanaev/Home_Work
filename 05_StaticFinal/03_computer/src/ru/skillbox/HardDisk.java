@@ -1,26 +1,12 @@
 package ru.skillbox;
 
 public class HardDisk {
-    private final String type;
     private final int volume;
     private final double weight;
 
-    public HardDisk(String type, int volume, double weight) {
-        this.type = type;
+    public HardDisk(int volume, double weight) {
         this.volume = volume;
         this.weight = weight;
-    }
-
-    public double HardDIskWeight(){
-        return weight;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public HardDisk setType(String type) {
-       return new HardDisk(type, volume, weight);
     }
 
     public int getVolume() {
@@ -28,7 +14,7 @@ public class HardDisk {
     }
 
     public HardDisk setVolume(int volume) {
-        return new HardDisk(type, volume, weight);
+        return new HardDisk(volume, weight);
     }
 
     public double getWeight() {
@@ -36,11 +22,12 @@ public class HardDisk {
     }
 
     public HardDisk setWeight(double weight) {
-        return new HardDisk(type, volume, weight);
+        return new HardDisk(volume, weight);
     }
+
     public String toString(){
         return "Характеристика жесткого диска: " + "\n" +
-                "Тип Ж/д: " + type + "\n" +
+                "Тип Ж/д: " + TypeComponents.HDD + "\n" +
                 "Объем Ж/д: " + volume + " Гб" + "\n" +
                 "Вес Ж/д: " + weight + "гр." + "\n";
     }

@@ -17,9 +17,6 @@ public class Main {
         descriptionCargo = descriptionCargo.setDeliveryAddress("ул. Мотросова 9");
         descriptionCargo.String();
         System.out.println(dimensions);
-        Dimensions copy = new Dimensions(
-                dimensions.getWidth(),
-                dimensions.getHeight(),
-                dimensions.getLength());
+
     }
 }
