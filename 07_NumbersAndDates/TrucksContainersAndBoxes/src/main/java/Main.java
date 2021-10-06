@@ -6,6 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String boxes = scanner.nextLine();
 
+
         // TODO: вывести в консоль коробки разложенные по грузовикам и контейнерам
         // пример вывода при вводе 2
         // для отступа используйте табуляцию - \t
