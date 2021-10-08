@@ -21,15 +21,12 @@ public class GeometryCalculator {
     // перед расчетом площади рекомендуется проверить возможен ли такой треугольник
     public static boolean isTrianglePossible(double a, double b, double c) {
 
-        if (a + b > c && b + c > a && c + a > b) {
-            return true;
-        }
-        return false;
+        return a + b > c && b + c > a && c + a > b;
     }
 
     // методом isTrianglePossible, если невозможен вернуть -1.0
     public static double getTriangleSquare(double a, double b, double c) {
-        if (isTrianglePossible(a, b, c) == true) {
+        if (isTrianglePossible(a, b, c)) {
             double p = (a + b + c) / 2.0;
             return Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
