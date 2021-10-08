@@ -10,7 +10,7 @@ public class GeometryCalculator {
 
     }
 
-    // метод должен использовать абсолютное значение radius
+    // метод должен использовать абсолютное значение radius.
 
     public static double getSphereVolume(double radius) {
 
@@ -18,13 +18,13 @@ public class GeometryCalculator {
 
     }
 
-    // перед расчетом площади рекомендуется проверить возможен ли такой треугольник
+    // перед расчетом площади рекомендуется проверить возможен ли такой треугольник.
     public static boolean isTrianglePossible(double a, double b, double c) {
 
         return a + b > c && b + c > a && c + a > b;
     }
 
-    // методом isTrianglePossible, если невозможен вернуть -1.0
+    // методом isTrianglePossible, если невозможен вернуть -1.0.
     public static double getTriangleSquare(double a, double b, double c) {
         if (isTrianglePossible(a, b, c)) {
             double p = (a + b + c) / 2.0;
