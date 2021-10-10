@@ -25,7 +25,7 @@ public class Main {
         for (int i = 0; birthday.isBefore(today) || birthday.isEqual(today); i++) {
             number += i + " - " + formatter.format(birthday) + System.lineSeparator();
             birthday = birthday.plusYears(1);
-
+            System.out.println();
         }
         return number;
 
