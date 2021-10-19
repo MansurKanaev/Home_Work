@@ -2,17 +2,26 @@ import java.util.Scanner;
 
 public class Main {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    while (true) {
-      String input = scanner.nextLine();
-      if (input.equals("0")) {
-        break;
-      }
-      //TODO:напишите ваш код тут, результат вывести в консоль.
-      //При невалидном ФИО вывести в консоль: Введенная строка не является ФИО
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equals("0")) {
+                break;
+            }
+            // Проверка текста на допустимые символы
+            String listLetters = "[а-яА-Я-еЁ]{1,}";
+            String regex = listLetters + "[\\s]{1}" + listLetters + "[\\s]{1}" + listLetters;
+            if (!input.matches(regex)) {
+                System.out.println("Введенная строка не является ФИО");
+                continue;
+            }
+            // Формируем ввод
+            String[] fullName;
+            fullName = input.split("\\s");
+            System.out.println("Фамилия: " + fullName[0] + "\n" + "Имя: " + fullName[1] + "\n" +
+                    "Отчество: " + fullName[2]);
+        }
     }
-  }
-
 }
