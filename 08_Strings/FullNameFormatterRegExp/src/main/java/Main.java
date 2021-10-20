@@ -11,8 +11,8 @@ public class Main {
                 break;
             }
             // Проверка текста на допустимые символы
-            String listLetters = "[а-яА-Я-еЁ]{1,}";
-            String regex = listLetters + "[\\s]{1}" + listLetters + "[\\s]{1}" + listLetters;
+            String listLetters = "[а-яА-Я-еЁ]+";
+            String regex = listLetters + "[\\s]+" + listLetters + "[\\s]+" + listLetters;
             if (!input.matches(regex)) {
                 System.out.println("Введенная строка не является ФИО");
                 continue;
