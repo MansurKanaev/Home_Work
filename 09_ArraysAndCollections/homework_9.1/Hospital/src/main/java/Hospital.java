@@ -1,5 +1,5 @@
 public class Hospital {
-    //TODO: напишите метод генерации массива температур пациентов
+
     public static float[] generatePatientsTemperatures(int patientsCount) {
         float a = 32.0f;
         float b = 40.0f;
@@ -11,10 +11,6 @@ public class Hospital {
         return temp;
     }
 
-    /*
-           TODO: Напишите код, который выводит среднюю температуру по больнице,количество здоровых пациентов,
-               а также температуры всех пациентов.
-           */
     public static String getReport(float[] temperatureData) {
         int healthyPatients = 0;  // Здоровые пациенты
         double averageTemperature = 0.0;  // Средняя температура

@@ -24,7 +24,7 @@ public class Main {
                 char s = symbol.charAt(0);
                 for (int x = 0; x < 65536; x++) {
                     char c = (char) x;
-                    if (c >= 'А' && c <= 'я' || c >= 'A' && c<= 'z'|| c == 'ё' || c == 'Ё' || c == '-' || c == ' ') {
+                    if (c >= 'А' && c <= 'я'|| c == 'ё' || c == 'Ё' || c == '-' || c == ' ') {
                         if (s == c) {
                             amountSymbol += 1;
                         }

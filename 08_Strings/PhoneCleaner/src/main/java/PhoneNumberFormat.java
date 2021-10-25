@@ -19,7 +19,7 @@ public class PhoneNumberFormat {
             String regex4 = "8[0-9]{10}";
             String formatNumber1 = formatNumber.replaceAll("^8[^0-9]{10}", "");
             String formatNumber2 = formatNumber1.replaceAll("^8", "7");
-
+             // Проверяем формат номера на 7 (928) 016-39-84
             String rx1 = "(\\d)(\\d{3})(\\d{3})(\\d{2})(\\d{2})";
             String rx2 = "(\\d{3})(\\d{3})(\\d{2})(\\d{2})";
             Pattern pattern1 = Pattern.compile(rx1);

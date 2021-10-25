@@ -3,8 +3,8 @@ package ru.skillbox;
 public class Elevator {
 
     private  int currentFloor = 1;
-    private  int minFloor;
-    private  int maxFloor;
+    private final int minFloor;
+    private final int maxFloor;
 
     public Elevator(int minFloor, int maxFloor) {
         this.minFloor = minFloor;
@@ -21,7 +21,7 @@ public class Elevator {
     }
     public void move(int floor) {
         if (floor > maxFloor || floor < minFloor) {
-            System.out.println("Ошибка. Выберите правельный этаж:");
+            System.out.println("Ошибка. Выберите правильный этаж:");
             return;
         }
         while (currentFloor < floor) {
@@ -33,7 +33,9 @@ public class Elevator {
             moveDown();
         }
         System.out.println("Текущий этаж:" + floor);
+
     }
+
 }
 
 

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 public class Main {
 
     public static void main(String[] args) {
-        double a = 5;
+       double a = 5;
         double b = 5;
         double c = 20;
 
@@ -22,36 +22,30 @@ public class Main {
 
         System.out.println(decimal.compareTo(decimal5));
 
-
-
-      /**
-
-
-
-
         Container container = new Container();
         container.addCount(5672);
         System.out.println(container.getCount());
+
         // TODO: ниже напишите код для выполнения задания:
         //  С помощью цикла и преобразования чисел в символы найдите все коды
         //  букв русского алфавита — заглавных и строчных, в том числе буквы Ё.
 
         for(int i = 1040; i <= 1045 ; i++){
-            char c = (char) i;
-            System.out.println(i + " - " + c);
+            char c1 = (char) i;
+            System.out.println(i + " - " + c1);
         }
         System.out.println("1025" + " - " + (char) 1025);
 
         for(int i = 1046; i <= 1077 ; i++){
-            char c = (char) i;
-            System.out.println(i + " - " + c);
+            char c2 = (char) i;
+            System.out.println(i + " - " + c2);
         }
         System.out.println("1105" + " - " + (char) 1105);
 
         for(int i = 1078; i <= 1103 ; i++){
-            char c = (char) i;
-            System.out.println(i + " - " + c);
+            char c3 = (char) i;
+            System.out.println(i + " - " + c3);
         }
-        */
+
     }
 }
