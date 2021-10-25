@@ -15,7 +15,7 @@ public class Hospital {
         int healthyPatients = 0;  // Здоровые пациенты
         double averageTemperature = 0.0;  // Средняя температура
         StringBuilder patientTemperatures = new StringBuilder();
-//
+
         for (float x : temperatureData) {
             patientTemperatures.append(x).append(" ");
             averageTemperature += x;
