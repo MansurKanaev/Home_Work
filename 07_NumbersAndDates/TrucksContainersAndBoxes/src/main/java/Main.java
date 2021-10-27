@@ -12,6 +12,7 @@ public class Main {
             if (i % 324 == 1) {
                 truck += 1;
                 System.out.println("Грузовик: " + truck);
+
             }
             if (i % 27 == 1) {
                 container += 1;
