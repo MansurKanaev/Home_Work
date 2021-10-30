@@ -49,7 +49,7 @@ class TodoListTest {
     }
 
     @Test
-    @DisplayName("Добавление трех дел -> добавление дела на НЕсуществующий индекс")
+    @DisplayName("Добавление трех дел -> добавление дела на Несуществующий индекс")
     void addTodoToNotExistIndex() {
         String addedTodo = "new todo";
         List<String> todos = getRandomTodos(3);
@@ -68,7 +68,7 @@ class TodoListTest {
     }
 
     @Test
-    @DisplayName("Добавление пяти дел -> удаление дела с НЕсуществующим индексом")
+    @DisplayName("Добавление пяти дел -> удаление дела с Несуществующим индексом")
     void deleteNotExistTodo() {
         List<String> todos = getRandomTodos(5);
         todos.forEach(todoList::add);
@@ -87,7 +87,7 @@ class TodoListTest {
     }
 
     @Test
-    @DisplayName("Добавление двух дел -> изменение НЕсуществующего дела")
+    @DisplayName("Добавление двух дел -> изменение Несуществующего дела")
     void editNotExistTodo() {
         List<String> todos = getRandomTodos(2);
         todos.forEach(todoList::add);
