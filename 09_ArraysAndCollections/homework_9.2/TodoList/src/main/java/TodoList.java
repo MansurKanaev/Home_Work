@@ -13,8 +13,9 @@ public class TodoList {
         if (index >= todoList.size()) {
             todoList.add(todo);
             System.out.println("Добавлено дело " + todo);
-        } else if (!(index < 0)) {
-            System.out.println("Дело \"" + todoList.get(index) + "\" заменено на \"" + todo + "\"");
+        }
+        else if (!(index < 0)) {
+            System.out.println("Дело \"" + todoList.get(index) + "\" заменено на \"" + todo + "\"" + " Сдвигая дело(а) на  пункт ниже");
             todoList.add(index, todo);
         }
     }

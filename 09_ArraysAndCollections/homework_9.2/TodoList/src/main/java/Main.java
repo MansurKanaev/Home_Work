@@ -23,8 +23,16 @@ public class Main {
         String list = "LIST";
         String edit = "EDIT\\s[0-9]+\\s[\\d\\D]+";
         String delete = "DELETE\\s[0-9]+";
+        String addNumber = "ADD\\s[0-9]+\\s[\\d\\D]+";
 
-        if (input.matches(add)) {
+        if (input.matches(addNumber)) {
+            String regex = "ADD\\s[0-9]+";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(input);
+            matcher.find();
+            int end = matcher.end();
+            todoList.add(Integer.parseInt(input.substring(4, end)), input.substring(end + 1));
+        } else if (input.matches(add)) {
             todoList.add(input.substring(4));
         } else if (input.matches(list)) {
             todoList.getTodos();
