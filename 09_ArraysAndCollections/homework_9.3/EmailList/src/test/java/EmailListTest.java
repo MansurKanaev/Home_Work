@@ -27,7 +27,7 @@ class EmailListTest {
     }
 
     @Test
-    @DisplayName("Добавление НЕвалидного email [hello_skillbox.ru]")
+    @DisplayName("Добавление Невалидного email [hello_skillbox.ru]")
     void testAddNotValidEmailWithoutAt() {
         String notValidEmail = "hello_skillbox.ru";
         emailList.add(notValidEmail);
@@ -35,7 +35,7 @@ class EmailListTest {
     }
 
     @Test
-    @DisplayName("Добавление НЕвалидного email [hello@skillboxru]")
+    @DisplayName("Добавление Невалидного email [hello@skillboxru]")
     void testAddNotValidEmailWithoutDomainDot() {
         String notValidEmail = "hello@skillboxru";
         emailList.add(notValidEmail);

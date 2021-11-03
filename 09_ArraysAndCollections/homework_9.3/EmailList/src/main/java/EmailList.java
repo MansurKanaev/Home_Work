@@ -1,15 +1,40 @@
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class EmailList {
+    Set<String> treeSet = new TreeSet<>();
+
+    public void commandEmailList(String command) {
+        String add = "(?i)ADD\\s[\\d\\D]+[@][\\D]+\\.[\\D]{2,3}";
+        String list = "(?i)LIST";
+        if (command.matches(add)) {
+            add(command.substring(4));
+        } else if (command.matches(list)) {
+            getSortedEmails();
+        } else {
+            System.out.println("Неверный формат email");
+        }
+    }
 
     public void add(String email) {
-        // TODO: валидный формат email добавляется
+        String add = "(?i)[\\d\\D]+[@][\\D]+\\.[\\D]{2,3}";
+        if (email.matches(add)) {
+            System.out.println("Добавлена почта \"" + email.toLowerCase() + "\"");
+            treeSet.add(email.toLowerCase());
+        }
     }
+
 
     public List<String> getSortedEmails() {
-        // TODO: возвращается список электронных адресов в алфавитном порядке
-        return Collections.emptyList();
+        if (treeSet.isEmpty()) {
+            System.out.println("Нет почты, сначала добавьте");
+        } else {
+            Iterator<String> itr = treeSet.iterator();
+            while (itr.hasNext()) {
+                for (int i = 0; i < treeSet.size(); i++) {
+                    System.out.println(itr.next());
+                }
+            }
+        }
+        return new ArrayList<>(treeSet);
     }
-
 }
