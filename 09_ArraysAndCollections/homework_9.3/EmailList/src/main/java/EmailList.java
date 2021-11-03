@@ -28,11 +28,8 @@ public class EmailList {
         if (treeSet.isEmpty()) {
             System.out.println("Нет почты, сначала добавьте");
         } else {
-            Iterator<String> itr = treeSet.iterator();
-            while (itr.hasNext()) {
-                for (int i = 0; i < treeSet.size(); i++) {
-                    System.out.println(itr.next());
-                }
+            for (String s : treeSet) {
+                System.out.println(s);
             }
         }
         return new ArrayList<>(treeSet);
