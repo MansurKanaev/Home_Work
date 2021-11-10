@@ -1,6 +1,6 @@
 public class Arithmetic {
-    private int a;
-    private int b;
+    private final int a;
+    private final int b;
 
     public Arithmetic (int a, int b){
         this.a = a;
@@ -15,16 +15,11 @@ public class Arithmetic {
         return a * b;
     }
     public int max(){
-        if (a > b)
-            return a;
-        else return b;
+        return Math.max(a, b);
     }
     public int min(){
-        if (a < b)
-            return a;
-        else return b;
+        return Math.min(a, b);
     }
-
 
     public void print(){
         System.out.print("Сумма чисел: " + amount() + "\n" +"Произведение чисел:" +multiplication() +
