@@ -1,18 +1,23 @@
 public class BankAccount {
 
-  public double getAmount() {
-    //TODO: реализуйте метод и удалите todo
-    // верните значение количества денег не счету
-    return 0;
-  }
+    public  double invoiceAmount = 0.0;
 
-  public void put(double amountToPut) {
-    //TODO: реализуйте метод и удалите todo
-    // метод зачисляет деньги на счет
-  }
+    public double getAmount() {
+        System.out.println("На счету: " + invoiceAmount + " Руб.");
+        return invoiceAmount;
+    }
 
-  public void take(double amountToTake) {
-    //TODO: реализуйте метод и удалите todo
-    // метод списывает деньги со счета
-  }
+    public void put(double amountToPut) {
+        if (amountToPut >= 0) {
+            invoiceAmount += amountToPut;
+            System.out.println("Счет в банке пополнен +" + amountToPut + " Руб.");
+        }
+    }
+
+    public void take(double amountToTake) {
+        if (amountToTake <= invoiceAmount) {
+            invoiceAmount -= amountToTake;
+            System.out.println("Со счета сняли -" + amountToTake + " Руб.");
+        }
+    }
 }
