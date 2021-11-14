@@ -1,6 +1,6 @@
 public class BankAccount {
 
-    public  double invoiceAmount = 0.0;
+    public double invoiceAmount = 0.0;
 
     public double getAmount() {
         System.out.println("На счету: " + invoiceAmount + " Руб.");
