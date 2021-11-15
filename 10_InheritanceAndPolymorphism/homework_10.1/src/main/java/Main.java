@@ -3,17 +3,22 @@ public class Main {
         BankAccount bankAccount = new BankAccount();
         CardAccount cardAccount = new CardAccount();
         DepositAccount depositAccount = new DepositAccount();
+        bankAccount.take(50);
+        cardAccount.take(50);
+        depositAccount.take(50);
+
+        bankAccount.put(300);
+
+        bankAccount.take(500);
+        bankAccount.take(50);
+
+        cardAccount.take(500);
+        cardAccount.take(50);
+
         depositAccount.take(500);
-        depositAccount.put(1000);
-        depositAccount.take(200);
+        depositAccount.take(50);
 
-//        bankAccount.put(1000);
-//        bankAccount.take(550);
-//        bankAccount.take(150);
-//        cardAccount.take(50);
-//        bankAccount.getAmount();
-//        System.out.println();
-
+        bankAccount.getAmount();
 
         //-------------------------------------------------------------------------
 
@@ -30,6 +35,9 @@ public class Main {
 //        mansurakk.send(dashaakk, 3500);
 //        System.out.print("Даша: ");
 //        dashaakk.getAmount();
+//        System.out.print("Мансур: ");
+//        mansurakk.getAmount();
+//        mansurakk.put(5000);
 //        System.out.print("Мансур: ");
 //        mansurakk.getAmount();
 
