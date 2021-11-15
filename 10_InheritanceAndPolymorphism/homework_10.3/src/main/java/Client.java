@@ -1,16 +1,28 @@
 public abstract class Client {
 
-    public double getAmount() {
-        //TODO: реализуйте метод и удалите todo
-        return 0;
+    protected double invoiceAmount = 0.0;
+
+    protected double getAmount() {
+        System.out.println("На счету: " + invoiceAmount + " Руб.");
+        return invoiceAmount;
     }
 
-    public void put(double amountToPut) {
-        //TODO: реализуйте метод и удалите todo
+    protected void put(double amountToPut) {
+        if (amountToPut > 0.0) {
+            invoiceAmount += amountToPut;
+            System.out.println("На счет зачислено: +" + amountToPut + " Руб.");
+        }
     }
 
-    public void take(double amountToTake) {
-        //TODO: реализуйте метод и удалите todo
+    protected void take(double amountToTake) {
+        if (amountToTake >= invoiceAmount && invoiceAmount == 0.0) {
+            System.out.println("Сначала пополните счет!");
+        } else if (amountToTake > invoiceAmount && invoiceAmount > 0.0) {
+            System.out.println("Нельзя снять больше, чем на счету!");
+        } else if (amountToTake <= invoiceAmount) {
+            invoiceAmount -= amountToTake;
+            System.out.println("Со счета сняли: -" + amountToTake + " Руб.");
+        }
     }
 
 }
