@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -6,10 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         List<Employee> staff = Employee.loadStaffFromFile(STAFF_TXT);
-        System.out.println(staff);
+        sortBySalaryAndAlphabet(staff);
     }
 
     public static void sortBySalaryAndAlphabet(List<Employee> staff) {
-        //TODO Метод должен отсортировать сотрудников по заработной плате и алфавиту.
+        staff.sort(Comparator.comparingInt(Employee::getSalary).thenComparing(Employee::getName));
+        for (Employee e : staff) {
+            System.out.println(e);
+        }
     }
 }
