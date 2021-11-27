@@ -17,8 +17,7 @@ public class Main {
            }
            return o1.getName().compareTo(o2.getName());
         });
-        for (Employee e : staff) {
-            System.out.println(e);
-        }
+        staff.forEach(System.out::println);
+
     }
 }
