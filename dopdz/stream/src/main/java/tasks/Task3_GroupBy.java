@@ -4,11 +4,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 /**
  * Задания на groupingBy - очень полезная функция в Stream.
- *
- * Есть список сотрудников Employee с 2-мя строковомы полями (имя + компания где работает сотрудник).
+ * <p>
+ * Есть список сотрудников Employee с 2-мя строковомы полями (имя + компания, где работает сотрудник).
  * Нужно потренироваться группировать сотрудников по компаниям.
  */
 public class Task3_GroupBy {
@@ -35,7 +38,8 @@ public class Task3_GroupBy {
      * </pre>
      */
     public static Map<String, List<Employee>> groupByCompaniesAsList(Collection<Employee> employees) {
-        throw new PleaseDeleteMeAndImplement();
+        employees.stream().collect(groupingBy(Employee::getCompany)).entrySet().forEach(System.out::println);
+        return employees.stream().collect(groupingBy(Employee::getCompany));
     }
 
     /**
@@ -62,9 +66,12 @@ public class Task3_GroupBy {
      * </pre>
      */
     public static Map<String, List<Employee>> groupByCompaniesAsListUppercase(Collection<Employee> employees) {
-        throw new PleaseDeleteMeAndImplement();
+         return employees.stream().collect(groupingBy(Employee::getCompany));
     }
 
+
+//    Map<String, List<String>> targetTableColumnListMap = nqColumnMapList.stream().flatMap(m -> m.entrySet().stream())
+//            .collect(Collectors.groupingBy(e -> e.getKey().toUpperCase(), Collectors.mapping(Map.Entry::getValue, Collectors.toList())));
 
     /**
      * Тут почти тоже самое, но в значениях должны оказаться не List, а Set.
@@ -75,12 +82,10 @@ public class Task3_GroupBy {
      * - Collectors.groupingBy
      * - Collectors.toSet (как downstream коллектор для groupingBy)
      * </pre>
-     *
-     * @param employees
-     * @return
      */
     public static Map<String, Set<Employee>> groupByCompaniesAsSet(Collection<Employee> employees) {
-        throw new PleaseDeleteMeAndImplement();
+        System.out.println(employees.stream().collect(groupingBy(Employee::getCompany, toSet())));
+        return employees.stream().collect(groupingBy(Employee::getCompany, toSet()));
     }
 
     /**
@@ -105,18 +110,16 @@ public class Task3_GroupBy {
      *   - Collectors.mapping
      *   - Collectors.toList
      * </pre>
-     *
-     * @param employees
-     * @return
      */
     public static Map<String, List<String>> groupByCompaniesAsString(Collection<Employee> employees) {
-        throw new PleaseDeleteMeAndImplement();
+        System.out.println(employees.stream().collect(groupingBy(Employee::getCompany, mapping(Employee::getName, toList()))));
+        return employees.stream().collect(groupingBy(Employee::getCompany, mapping(Employee::getName, toList())));
     }
 
 
     public static class Employee {
-        private String name;
-        private String company;
+        private final String name;
+        private final String company;
 
         public Employee(String name, String company) {
             this.name = name;

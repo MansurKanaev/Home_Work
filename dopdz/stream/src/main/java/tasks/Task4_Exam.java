@@ -108,7 +108,7 @@ public class Task4_Exam {
      * <p>
      * Гарантируется, что значения отсортированы по возрастанию. Т.е. можно смело итерироваться по .values()
      */
-    private enum TruckType {
+    enum TruckType {
         Pickup(2_000),
         SmallBoxTruck(12_000),
         SemiTrailer(20_000);

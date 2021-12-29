@@ -22,7 +22,7 @@ class Task3GroupByTest {
     void testGroupByTypeCompanyAsList() {
         var expected = new TreeMap<>() {{
             put("Google", Arrays.asList(a, b));
-            put("Microsoft", Arrays.asList(c));
+            put("Microsoft", List.of(c));
         }};
 
         assertEquals(expected, Task3_GroupBy.groupByCompaniesAsList(employees));
@@ -33,7 +33,7 @@ class Task3GroupByTest {
     void testGroupByTypeCompanyAsListUppercase() {
         var expected = new TreeMap<>() {{
             put("GOOGLE", Arrays.asList(a, b));
-            put("MICROSOFT", Arrays.asList(c));
+            put("MICROSOFT", List.of(c));
         }};
 
         assertEquals(expected, Task3_GroupBy.groupByCompaniesAsListUppercase(employees));
@@ -44,7 +44,7 @@ class Task3GroupByTest {
     void testGroupByTypeCompany() {
         var expected = new TreeMap<>() {{
             put("Google", new LinkedHashSet<>(Arrays.asList(a, b)));
-            put("Microsoft", new LinkedHashSet<>(Arrays.asList(c)));
+            put("Microsoft", new LinkedHashSet<>(List.of(c)));
         }};
 
         assertEquals(expected, Task3_GroupBy.groupByCompaniesAsSet(employees));
@@ -55,7 +55,7 @@ class Task3GroupByTest {
     void testGroupByTypeCompanyAsString() {
         var expected = new TreeMap<>() {{
             put("Google", Arrays.asList("Boris", "Misha"));
-            put("Microsoft", Arrays.asList("Lena"));
+            put("Microsoft", List.of("Lena"));
         }};
 
         assertEquals(expected, Task3_GroupBy.groupByCompaniesAsString(employees));
