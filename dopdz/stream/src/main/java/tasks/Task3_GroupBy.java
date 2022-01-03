@@ -1,11 +1,9 @@
 package tasks;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Collections.*;
 import static java.util.stream.Collectors.*;
 
 /**
@@ -66,12 +64,10 @@ public class Task3_GroupBy {
      * </pre>
      */
     public static Map<String, List<Employee>> groupByCompaniesAsListUppercase(Collection<Employee> employees) {
-         return employees.stream().collect(groupingBy(Employee::getCompany));
+        System.out.println(employees.stream().collect(Collectors.groupingBy(emp -> emp.getCompany().toUpperCase())));
+
+        return employees.stream().collect(Collectors.groupingBy(e -> e.getCompany().toUpperCase()));
     }
-
-
-//    Map<String, List<String>> targetTableColumnListMap = nqColumnMapList.stream().flatMap(m -> m.entrySet().stream())
-//            .collect(Collectors.groupingBy(e -> e.getKey().toUpperCase(), Collectors.mapping(Map.Entry::getValue, Collectors.toList())));
 
     /**
      * Тут почти тоже самое, но в значениях должны оказаться не List, а Set.

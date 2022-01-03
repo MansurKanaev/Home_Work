@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -46,7 +47,7 @@ class Task4ExamTest {
 
         var expected = new HashMap<>() {{
             put(SmallBoxTruck, Arrays.asList(a, b));
-            put(SemiTrailer, Arrays.asList(c));
+            put(SemiTrailer, List.of(c));
         }};
 
         assertEquals(expected, groupTrucksByType(Arrays.asList(a, b, c)));
