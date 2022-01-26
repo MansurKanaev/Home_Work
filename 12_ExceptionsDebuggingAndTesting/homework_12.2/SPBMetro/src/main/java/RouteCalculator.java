@@ -22,7 +22,7 @@ public class RouteCalculator {
         }
 
         route = getRouteWithOneConnection(from, to);
-        if (route != null) {
+        if (route.size() != 0) {
             return route;
         }
 
@@ -76,17 +76,6 @@ public class RouteCalculator {
     }
 
     private List<Station> getRouteWithOneConnection(Station from, Station to) {
-        for (Station station : from.getLine().getStations()) {
-            for (Station station1 : stationIndex.getConnectedStations(station)) {
-                for (Station station2 : to.getLine().getStations()) {
-                    for (Station station3 : stationIndex.getConnectedStations(station2)) {
-                        if (station1.getLine().getStations().equals(station3.getLine().getStations())) {
-                            return null;
-                        }
-                    }
-                }
-            }
-        }
 
         List<Station> route = new ArrayList<>();
 
