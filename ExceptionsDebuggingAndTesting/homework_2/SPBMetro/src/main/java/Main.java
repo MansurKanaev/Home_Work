@@ -65,9 +65,12 @@ public class Main {
 
     private static Station takeStation(String message) {
         for (; ; ) {
+
             System.out.println(message);
             String line = scanner.nextLine().trim();
             Station station = stationIndex.getStation(line);
+
+
             try {
                 if (station != null) {
                     logger.info(search, "Введена станция - " + line);
@@ -75,8 +78,11 @@ public class Main {
                 }
                 logger.error(errors, "Станции c именем \"" + line + "\" нет в списке.");
                 System.out.println("Станция не найдена :(");
-            } catch (Exception en) {
-                logger.warn(exceptions, "Исключение - " + line);
+                List<String> list = null;
+                list.forEach(System.out::println);
+
+            } catch (Exception ex) {
+                logger.warn(exceptions, "Исключение - " + ex);
             }
         }
     }
