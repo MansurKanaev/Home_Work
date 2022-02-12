@@ -14,8 +14,7 @@ public class walkFileTree {
         }
 
         @Override
-        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
-                throws IOException {
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)throws IOException {
             System.out.println("Процесс обработки директории: " + dir);
             Path destinationPath = destination.resolve(source.relativize(dir));
             if (!destinationPath.toFile().exists()) {
