@@ -13,8 +13,14 @@ public class Main {
         String destinationDirectory = scanner.nextLine();
         Path source = Paths.get(sourceDirectory);
         Path destination = Paths.get(destinationDirectory);
-        Files.walkFileTree(source, new walkFileTree.CopyingFileVisitor(source, destination));
-        System.out.println("Копирование завершено!");
+        while (true) {
+            if (!source.toFile().isDirectory()) {
+                System.err.println("Ошибка введите директорию корректно!");
+                break;
+            }
+            Files.walkFileTree(source, new walkFileTree.CopyingFileVisitor(source, destination));
+            System.out.println("Копирование завершено!");
+        }
 
 //        do {
 //            System.out.println("Введите путь до папки, для ее копирования:");
@@ -26,13 +32,11 @@ public class Main {
 //                if (status) {
 //                    System.out.println("Копирование завершено!");
 //                } else {
-//                    System.err.println("Ошибка введите запрос корректно!");
+//                    System.err.println("Ошибка введите директорию корректно!");
 //                }
 //            } catch (Exception e) {
 //                e.printStackTrace();
 //            }
 //        } while (!sourceDirectory.isEmpty());
-
-
     }
 }
