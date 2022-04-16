@@ -4,15 +4,16 @@ public class Main {
 
   }
   public static String splitTextIntoWords(String text) {
-    String fullText = text.replaceAll("[0-9\\.,-:;]", " ");
-    String result = "";
+    String fullText = text.replaceAll("[0-9.,-:;]", " ");
+    StringBuilder result = new StringBuilder();
     String[] words = fullText.split("\\s+");
     if(fullText.isEmpty()){
       return "";
     }
-    for(int i = 0; i < words.length; i++) {
-     result += words[i] + System.lineSeparator();
+    for (String word : words) {
+      result.append(word).append(System.lineSeparator());
     }
-    return result.trim();
+    System.out.println(result.toString().trim());
+    return result.toString().trim();
   }
 }

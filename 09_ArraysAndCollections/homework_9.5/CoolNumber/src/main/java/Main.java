@@ -8,10 +8,10 @@ public class Main {
         List<String> list = CoolNumbers.generateCoolNumbers();
         HashSet<String> list1 = new HashSet<>(list);
         TreeSet<String> list2 = new TreeSet<>(list);
-        CoolNumbers.bruteForceSearchInList(list, "К999МР95");
-        CoolNumbers.binarySearchInList(list, "К999МР95");
-        CoolNumbers.searchInHashSet(list1, "К999МР95");
-        CoolNumbers.searchInTreeSet(list2, "К999МР95");
+        CoolNumbers.bruteForceSearchInList(list, "А999АА95");
+        CoolNumbers.binarySearchInList(list, "А999АА95");
+        CoolNumbers.searchInHashSet(list1, "А999АА95");
+        CoolNumbers.searchInTreeSet(list2, "А999АА95");
         System.out.println("Всего красивых номеров: " + list.size());
     }
 }

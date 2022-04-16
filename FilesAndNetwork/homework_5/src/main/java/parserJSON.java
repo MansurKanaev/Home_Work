@@ -9,8 +9,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class parserSubwayTransitionsFromJson {
+public class parserJSON {
     private static final String TAG_NAME = "connections";
+
+
 
     public static void readingJson(String json) throws IOException {
         StringBuilder builder = new StringBuilder();
