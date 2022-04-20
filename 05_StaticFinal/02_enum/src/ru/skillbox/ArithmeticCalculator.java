@@ -1,34 +1,28 @@
 package ru.skillbox;
 
 public class ArithmeticCalculator {
-    public  int x;
-    public  int y;
+    private final int x;
+    private final int y;
+    private int result;
+    private Operation operation;
 
     public ArithmeticCalculator(int x, int y) {
-      this.x = x;
-      this.y = y;
+        this.x = x;
+        this.y = y;
     }
-    public   int  calculateAdd(){
-        return x + y;
-    }
-    public int calculateSubtract(){
-        return x - y;
-    }
-    public int calculateMultiply(){
 
-        return x * y;
-    }
-    public int getX(){
-        return x;
-    }
-    public  int getY(){
-        return y;
-    }
-    public void  Print(){
-        System.out.print("Переменная X = " + getX() + "\n" +
-                "Переменная Y = " +  getY() +"\n" +
-                Operation.ADD + " = " + calculateAdd() + "\n" +
-                Operation.SUBTRACT + " = " + calculateSubtract() + "\n" +
-                Operation.MULTIPLY + " = " + calculateMultiply());
+    public void calculate(Operation operation) {
+        switch (operation) {
+            case ADD:
+                result = x + y;
+                break;
+            case MULTIPLY:
+                result = x * y;
+                break;
+            case SUBTRACT:
+                result = x - y;
+                break;
+        }
+        System.out.println(result);
     }
 }
