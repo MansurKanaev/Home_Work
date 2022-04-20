@@ -12,7 +12,8 @@ public class Main {
                 "не поворачивать!",
                 "001234",
                 "товар хрупкий!",
-                 dimensions);
+                dimensions);
+
         descriptionCargo = descriptionCargo.setWeight(50);
         descriptionCargo = descriptionCargo.setDeliveryAddress("ул. Мотросова 9");
         descriptionCargo.String();
