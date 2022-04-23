@@ -66,7 +66,7 @@ class MainTest {
     }
 
     @Test
-    @DisplayName("Введенно первое января текущего года")
+    @DisplayName("Введено первое января текущего года")
     public void firstOfJanuary() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
