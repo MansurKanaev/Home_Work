@@ -9,10 +9,11 @@ public class Main {
     }
 
     public static String getWage(String text) {
-        String vasyStart = "Вася заработал";
+        String vasyStart = "заработал ";
         String petyStart = "Петя";
         String mashaStart = "Маша -";
         String end = "руб";
+        String result;
 
         int newVasyStart = text.indexOf(vasyStart) + vasyStart.length();
         int newPetyStart = text.indexOf(petyStart) + petyStart.length();
@@ -26,6 +27,9 @@ public class Main {
         int sumPety = Integer.parseInt(text.substring(newPetyStart, endPety).trim());
         int sumMasha = Integer.parseInt(text.substring(newMashaStart, endMasha).trim());
 
-        return String.valueOf(sumVasy + sumPety + sumMasha);
+        result = String.valueOf(sumVasy + sumPety + sumMasha);
+
+        return result;
+
     }
 }
