@@ -5,7 +5,7 @@ public class Main {
         TwoDimensionalArray.getTwoDimensionalArray(3);
         System.out.println();
 
-        // вывод  Доп задание
+        // вывод Доп задание
         turnMassif90g.getTernArray(5);
 
 
