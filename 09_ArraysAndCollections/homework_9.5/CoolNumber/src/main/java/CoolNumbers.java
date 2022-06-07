@@ -4,65 +4,53 @@ public class CoolNumbers {
     public static ArrayList<String> list = new ArrayList<>();
 
     public static List<String> generateCoolNumbers() {
-        ArrayList<String> coolNumbersListWithoutRegion = new ArrayList<>();
-        String numberplate;
-        String numberplateWithoutRegion;
+        // буквы
+        ArrayList<String> letters = new ArrayList<>();
+        // номера
+        ArrayList<String> numbers = new ArrayList<>();
+        // регион
+        ArrayList<String> regions = new ArrayList<>();
+        // конечный формат номера
+        ArrayList<String> carNumber = new ArrayList<>();
+        letters.add("A");
+        letters.add("В");
+        letters.add("E");
+        letters.add("К");
+        letters.add("M");
+        letters.add("Н");
+        letters.add("О");
+        letters.add("Р");
+        letters.add("С");
+        letters.add("Т");
+        letters.add("У");
+        letters.add("Х");
 
-        char x; // первая буква
-        char z; // вторая буква
-        char y; // третья буква
+        int l = 12;
+        int n = 10;
+        int r = 95;
 
-        ArrayList<Character> allowedLetters = new ArrayList<>() {{
-            add('А');
-            add('В');
-            add('Е');
-            add('К');
-            add('М');
-            add('Н');
-            add('О');
-            add('Р');
-            add('С');
-            add('Т');
-            add('У');
-            add('Х');
-        }};
-
-        Collections.shuffle(allowedLetters, new Random());
-
-        for (Character firstLetter : allowedLetters) {
-            x = firstLetter;
-            for (int n = 0; n < 10; n++) {
-                for (Character secondLetter : allowedLetters) {
-                    z = secondLetter;
-                    for (Character thirdLetter : allowedLetters) {
-                        y = thirdLetter;
-                        numberplateWithoutRegion = String.format("%c%d%d%d%c%c", x, n, n, n, z, y);
-                        coolNumbersListWithoutRegion.add(numberplateWithoutRegion);
-                    }
-                }
+        for (int i = 0; i <= 999; i += 111) {
+            if (i == 0) {
+                numbers.add(i + "" + i + "" + i);
+                continue;
             }
+            numbers.add(String.valueOf(i));
         }
-
-        Collections.shuffle(coolNumbersListWithoutRegion, new Random());
-
-        for (String numberWithoutRegion : coolNumbersListWithoutRegion) {
-            for (int j = 1; j <= 199; j++) {
-
-                if (j < 10) {
-                    numberplate = String.format("%s0%d", numberWithoutRegion, j);
-
-                } else {
-                    numberplate = String.format("%s%d", numberWithoutRegion, j);
-                }
-                list.add(numberplate);
+        for (int i = 1; i <= 95; i++) {
+            if (i < 10) {
+                regions.add("0" + i);
+                continue;
             }
-            if (list.size() >= 2_000_000) {
-                break;
-            }
+            regions.add(String.valueOf(i));
         }
-
-        Collections.shuffle(list, new Random());
-        return list;
+        for (int f = 1; f <= 2_000_001; f++) {
+            int randomL = (int) (Math.random() * l);
+            int randomN = (int) (Math.random() * n);
+            int randomR = (int) (Math.random() * r);
+            carNumber.add(letters.get(randomL) + numbers.get(randomN) +
+                    letters.get(randomL) + letters.get(randomL) + regions.get(randomR));
+        }
+        return carNumber;
     }
 
     public static boolean bruteForceSearchInList(List<String> list, String number) {

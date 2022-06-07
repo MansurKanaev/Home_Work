@@ -23,8 +23,7 @@ public class Main {
             if (input.matches(rxName)) {
                 if (phoneBook.getContactByName(input).equals(new TreeSet<>())) {
                     System.out.println("Введите номер телефона для абонента \"" + input + "\":");
-                    Scanner number = new Scanner(System.in);
-                    String phone = number.nextLine();
+                    String phone = new Scanner(System.in).nextLine();
                     phoneBook.addContact(phone, input);
                 } else {
                     System.out.println(phoneBook.getContactByName(input));
@@ -36,8 +35,7 @@ public class Main {
                 if (phoneBook.getContactByPhone(input).equals("Такого номера нет в телефонной книге")) {
                     System.out.println("Такого номера нет в телефонной книге");
                     System.out.println("Введите имя абонента для номера \"" + input + "\":");
-                    Scanner names = new Scanner(System.in);
-                    String name = names.nextLine();
+                    String name = new Scanner(System.in).nextLine();
                     phoneBook.addContact(input, name);
                 } else {
                     System.out.println(phoneBook.getContactByPhone(input));

@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Добро пожаловать! Это список дел, введите команды из строки ниже:\n" +
-                "LIST, ADD, EDIT, DELETE");
+                "LIST, ADD, EDIT, DELETE: ");
         String add = "^(ADD)\\s(\\D)+";
         String add2 = "^(ADD)\\s(\\d)+\\s(\\D)+";
         String get = "^(LIST)";
@@ -20,8 +20,7 @@ public class Main {
             int index;
             if (input.isEmpty()) {
                 break;
-            }
-            if (input.matches(add)) {
+            } else if (input.matches(add)) {
                 todo = input.substring(4);
                 TODO_LIST.add(todo);
             } else if (input.matches(add2)) {

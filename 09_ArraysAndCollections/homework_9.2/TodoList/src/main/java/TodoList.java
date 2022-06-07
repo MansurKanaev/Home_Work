@@ -20,7 +20,7 @@ public class TodoList {
 
     public void edit(String todo, int index) {
         if (index < todoList.size()) {
-            System.out.print("Дело \"" + todoList.get(index) + "\" заменено на \"" + todo + "\".");
+            System.out.println("Дело \"" + todoList.get(index) + "\" заменено на \"" + todo + "\".");
             todoList.set(index, todo);
         } else {
             System.out.println("Дело с таким номером не существует.");
