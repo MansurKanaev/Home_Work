@@ -7,9 +7,9 @@ public class ReverseArray {
         String endSigns;
 
         for (int i = 0; i < symbols / 2; i++) {
-            endSigns = strings[symbols - i - 1]; // берем  значения с конца
+            endSigns = strings[symbols - i - 1]; // берем значения с конца
             strings[symbols - i - 1] = strings[i]; // берем значения с начала
-            strings[i] = endSigns; // меняем  начальные значения на конечные
+            strings[i] = endSigns; // меняем начальные значения на конечные
         }
 
         for (String string : strings) {

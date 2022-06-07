@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="FATAL">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="searchLog" fileName="logs/search.log">
+            <PatternLayout pattern="%d{dd-mm-yyyy HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <MarkerFilter marker="search_log"/>
+        </File>
+        <File name="errorsLog" fileName="logs/input_errors.log">
+            <PatternLayout pattern="%d{dd-mm-yyyy HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <MarkerFilter marker="errors_log"/>
+        </File>
+        <File name="exceptionsLog" fileName="logs/exceptions.log ">
+            <PatternLayout pattern="%d{dd-mm-yyyy HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <MarkerFilter marker="exceptions_log"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <appender-ref ref="searchLog" level="info"/>
+            <appender-ref ref="errorsLog" level="error"/>
+            <appender-ref ref="exceptionsLog" level="warn"/>
+        </Root>
+    </Loggers>
+</configuration>

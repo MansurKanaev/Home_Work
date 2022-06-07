@@ -12,8 +12,8 @@ public class Main {
             }
             String surname = "";
             String name = "";
-            String patronymic = "";
-            String fullName = "";
+            StringBuilder patronymic = new StringBuilder();
+            String fullName;
             int amountText = 0;
             int amountSymbol = 0;
             int numberSpaces = 0;
@@ -35,7 +35,7 @@ public class Main {
             for (int i = 0; i < input.length(); i++) {
                 String symbol = input.substring(i, i + 1);
                 if (symbol.equals(" ")) {
-                    numberSpaces += 1;
+                    numberSpaces ++;
                 }
             }
 
@@ -71,11 +71,11 @@ public class Main {
             //Печатаем отчество;
             while (amountText < input.length()) {
                 String symbol = input.substring(amountText, amountText + 1);
-                amountText = amountText + 1;
-                patronymic += symbol;
+                amountText += 1;
+                patronymic.append(symbol);
             }
             //Если один из элементов пуст - вывод ошибки
-            if (surname.isEmpty() || name.isEmpty() || patronymic.isEmpty()) {
+            if (surname.isEmpty() || name.isEmpty() || (patronymic.length() == 0)) {
                 System.out.println("Введенная строка не является ФИО");
                 break;
             }

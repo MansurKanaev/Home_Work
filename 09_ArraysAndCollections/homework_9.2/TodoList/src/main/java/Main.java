@@ -1,52 +1,45 @@
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
-    private static final TodoList todoList = new TodoList();
+    private static final TodoList TODO_LIST = new TodoList();
 
     public static void main(String[] args) {
+        System.out.println("Добро пожаловать! Это список дел, введите команды из строки ниже:\n" +
+                "LIST, ADD, EDIT, DELETE: ");
+        String add = "^(ADD)\\s(\\D)+";
+        String add2 = "^(ADD)\\s(\\d)+\\s(\\D)+";
+        String get = "^(LIST)";
+        String edit = "^(EDIT)\\s(\\d)+\\s(\\D)+";
+        String del = "^(DELETE)\\s(\\d)+";
 
-        Scanner scanner = new Scanner(System.in);
         while (true) {
-            String input = scanner.nextLine();
-            input(input);
+            String input = new Scanner(System.in).nextLine();
+            String[] words = input.split("\\s", 3);
+            String todo = "Неверная команда!";
+            int index;
             if (input.isEmpty()) {
                 break;
+            } else if (input.matches(add)) {
+                todo = input.substring(4);
+                TODO_LIST.add(todo);
+            } else if (input.matches(add2)) {
+                index = Integer.parseInt(words[1]);
+                todo = words[2];
+                TODO_LIST.add(index, todo);
+            } else if (input.matches(get)) {
+                TODO_LIST.getTodos();
+            } else if (input.matches(edit)) {
+                index = Integer.parseInt(words[1]);
+                todo = words[2];
+                TODO_LIST.edit(todo, index);
+            } else if (input.matches(del)) {
+                index = Integer.parseInt(words[1]);
+                TODO_LIST.delete(index);
+            } else {
+                System.out.println(todo);
             }
         }
     }
-
-    public static void input(String input) {
-        String add = "ADD\\s[\\d\\D]+";
-        String list = "LIST";
-        String edit = "EDIT\\s[0-9]+\\s[\\d\\D]+";
-        String delete = "DELETE\\s[0-9]+";
-        String addNumber = "ADD\\s[0-9]+\\s[\\d\\D]+";
-
-        if (input.matches(addNumber)) {
-            String regex = "ADD\\s[0-9]+";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(input);
-            matcher.find();
-            int end = matcher.end();
-            todoList.add(Integer.parseInt(input.substring(4, end)), input.substring(end + 1));
-        } else if (input.matches(add)) {
-            todoList.add(input.substring(4));
-        } else if (input.matches(list)) {
-            todoList.getTodos();
-        } else if (input.matches(edit)) {
-            String regex = "EDIT\\s[0-9]+";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(input);
-            matcher.find();
-            int end = matcher.end();
-            todoList.edit(input.substring(end + 1), Integer.parseInt(input.substring(5, end)));
-        } else if (input.matches(delete)) {
-            todoList.delete(Integer.parseInt(input.substring(7)));
-        } else {
-            System.out.println("Неизвестная команда");
-        }
-    }
 }
+

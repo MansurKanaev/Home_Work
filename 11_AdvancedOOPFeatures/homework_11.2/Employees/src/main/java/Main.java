@@ -1,4 +1,5 @@
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 
 public class Main {
@@ -12,10 +13,10 @@ public class Main {
     }
 
     public static Employee findEmployeeWithHighestSalary(List<Employee> staff, int year) {
-
         Optional<Employee> optional = staff.stream().filter(employee -> {
-            int y = Integer.parseInt(new SimpleDateFormat("yyyy").format(employee.getWorkStart()));
-            return y == year;
+            LocalDate date = employee.getWorkStart().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int formattedYear = date.getYear();
+            return formattedYear == year;
         }).max(Comparator.comparing(Employee::getSalary));
         return optional.get();
     }

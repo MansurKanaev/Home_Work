@@ -11,23 +11,23 @@ public class Main {
         int month = 8;
         int year = 1998;
 
-        System.out.println(collectBirthdays(year, month, day));
-
+        collectBirthdays(year, month, day);
     }
 
     public static String collectBirthdays(int year, int month, int day) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy - EEE",
-                new Locale("us"));
         LocalDate birthday = LocalDate.of(year, month, day);
-        LocalDate today = LocalDate.now();
-        String number = "";
+        LocalDate toDay = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy - EEE", Locale.ENGLISH);
+        String text = "";
 
-        for (int i = 0; birthday.isBefore(today) || birthday.isEqual(today); i++) {
-            number += i + " - " + formatter.format(birthday) + System.lineSeparator();
+        for (int i = 0; i < 24; i++) {
+            if (birthday.isBefore(toDay) || birthday.isEqual(toDay)) {
+                text += i + " - " + formatter.format(birthday) + System.lineSeparator();
+            }
             birthday = birthday.plusYears(1);
-            System.out.println();
         }
-        return number;
+        System.out.println(text);
+        return text;
 
         //TODO реализуйте метод для построения строки в следующем виде
         //0 - 31.12.1990 - Mon

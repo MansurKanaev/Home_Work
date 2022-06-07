@@ -102,6 +102,6 @@ public class PhoneBook {
     /*
         for (Map.Entry<String, String> entry : map.entrySet()){
             String key = entry.getKey(); // получения ключа
-            String value = entry.getValue(); // получения ключа
+            String value = entry.getValue(); // получения значения
         }
     */

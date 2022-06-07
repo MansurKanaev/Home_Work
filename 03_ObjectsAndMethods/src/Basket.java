@@ -2,7 +2,7 @@ public class Basket {
 
     private static int count = 0;
     private static double totalPrice = 0; // 1ая статистическая переменная общая стоимость всех товаров
-    private static int totalCount = 0; // 2ая статистическая переменная  количесвто всех товаров
+    private static int totalCount = 0; // 2ая статистическая переменная количесвто всех товаров
     private double totalWeight = 0; // общий вес товаров
     private static double averagePrice = 0; // средняя цена товара в корзине
     private static double averageCount = 0; // средняя стоимость корзины
@@ -24,7 +24,7 @@ public class Basket {
         this();
         this.items = this.items + items;
     }
-    // статистический метод который увеличивет значения переменных при добавлении в корзину новых товаров
+    // статистический метод который увеличивает значения переменных при добавлении в корзину новых товаров
     public static void increaseCount(int count) {
         Basket.count = Basket.count + count;
     }
@@ -33,10 +33,7 @@ public class Basket {
 
     }
     public void add(String name, int price, int count, double weight) {
-        boolean error = false;
-        if (contains(name)) {
-            error = true;
-        }
+        boolean error = contains(name);
         if (totalPrice + count * price >= limit) {
             error = true;
         }
@@ -62,7 +59,7 @@ public class Basket {
         averagePrice =0;
         averageCount= 0;
     }
-    // Статистический метод  возвращающий отношение общей стоимости всех корзин к общему количеству всех товаров
+    // Статистический метод возвращающий отношение общей стоимости всех корзин к общему количеству всех товаров
     public static double getAveragePrice(){
         return averagePrice;
     }
